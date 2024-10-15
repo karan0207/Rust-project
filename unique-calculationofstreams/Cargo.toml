@@ -1,0 +1,9 @@
+[package]
+name = "alternative_calculator"
+version = "0.1.0"
+edition = "2021"
+
+# Dependencies
+[dependencies]
+
+[dev-dependencies]
