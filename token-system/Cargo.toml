@@ -1,0 +1,11 @@
+[package]
+name = "token_system"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+sp-core = { version = "5.0", default-features = false, features = ["std"] }
+sp-runtime = { version = "5.0", default-features = false, features = ["std"] }
+sp-io = { version = "5.0", default-features = false, features = ["std"] }
+sp-consensus-aura = { version = "5.0", default-features = false, features = ["std"] }
+sp-inherents = { version = "5.0", default-features = false, features = ["std"] }

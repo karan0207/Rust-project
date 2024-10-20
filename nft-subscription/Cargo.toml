@@ -1,0 +1,24 @@
+[package]
+name = "nft_subscription"
+version = "0.1.0"
+authors = ["Karan Singh <karan@example.com>"]
+edition = "2018"
+
+[dependencies]
+ink = "4.0.0"
+
+[dev-dependencies]
+ink-env = "4.0.0"
+ink-lang = "4.0.0"
+
+[lib]
+crate-type = ["cdylib", "rlib"]
+
+[features]
+default = ["std"]
+std = [
+    "ink/std",
+]
+no_std = [
+    "ink/no_std",
+]
