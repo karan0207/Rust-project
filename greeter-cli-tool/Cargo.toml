@@ -1,0 +1,8 @@
+[package]
+name = "greet_cli"
+version = "0.1.0"
+edition = "2021"
+
+# Dependencies
+[dependencies]
+clap = { version = "4.0", features = ["derive"] }
