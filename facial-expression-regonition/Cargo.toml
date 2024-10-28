@@ -1,0 +1,9 @@
+[package]
+name = "mood_editor"
+version = "0.1.0"
+edition = "2018"
+
+[dependencies]
+# You may need image processing libraries like opencv or face-detection crates
+opencv = "0.61.0"    # for facial recognition (if webcam-based)
+rand = "0.8.4"       # to add randomization in text color patterns based on moods
