@@ -1,0 +1,8 @@
+[package]
+name = "high_frequency_trading"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+chrono = "0.4"  # For timestamps in trades
+rand = "0.8"    # To generate mock data
