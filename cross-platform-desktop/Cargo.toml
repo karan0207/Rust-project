@@ -1,0 +1,8 @@
+[package]
+name = "my_desktop_app"
+version = "0.1.0"
+edition = "2021"
+
+# Dependencies
+[dependencies]
+tauri = { version = "1.0", features = ["api-all"] }
