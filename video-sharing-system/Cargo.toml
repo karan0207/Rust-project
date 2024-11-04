@@ -1,0 +1,9 @@
+[package]
+name = "p2p_video_sharing"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+tokio = { version = "1", features = ["full"] }
+serde = { version = "1.0", features = ["derive"] }
+bincode = "1.3"
