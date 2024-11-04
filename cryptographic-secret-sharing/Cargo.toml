@@ -1,0 +1,9 @@
+[package]
+name = "secret_sharing"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+rand = "0.8.4"
+num-bigint = "0.4.0"
+num = "0.4.0"
