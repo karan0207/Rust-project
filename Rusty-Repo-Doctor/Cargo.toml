@@ -1,0 +1,10 @@
+[package]
+name = "rusty_repo_doctor"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+git2 = "0.13"
+cargo_metadata = "0.14" # For reading Cargo.toml dependencies
+serde = { version = "1.0", features = ["derive"] } # For JSON parsing of metadata
+serde_json = "1.0"
