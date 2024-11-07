@@ -31,3 +31,21 @@ fn main() {
         Err(e) => eprintln!("Error checking dependencies: {:?}", e),
     }
 }
+
+/// Checks for outdated dependencies in Cargo.toml
+fn check_dependencies() -> Result<Vec<DependencyInfo>, Box<dyn std::error::Error>> {
+    let metadata = MetadataCommand::new().exec()?;
+    let mut dependencies = Vec::new();
+
+    for package in metadata.packages {
+        for dep in package.dependencies.iter() {
+            dependencies.push(DependencyInfo {
+                name: dep.name.clone(),
+                version: dep.req.to_string(),
+                is_outdated: false, // Placeholder; here we would ideally check against the latest version
+            });
+        }
+    }
+
+    Ok(dependencies)
+}
