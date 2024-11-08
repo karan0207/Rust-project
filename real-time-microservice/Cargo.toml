@@ -1,0 +1,12 @@
+[package]
+name = "real_time_messaging_service"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+actix-web = "4.0"
+actix = "0.13"
+actix-web-actors = "4.0"
+tokio = { version = "1", features = ["full"] }
+redis = "0.24" # For Redis pub/sub
+dotenv = "0.15" # For environment variable management
