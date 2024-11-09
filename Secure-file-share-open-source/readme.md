@@ -1,4 +1,4 @@
-# SecureFileShare
+# SecureFileShare: Project Details
 
 **SecureFileShare** is an open-source web application to securely upload, encrypt, and share files. It uses asymmetric RSA encryption for security.
 
