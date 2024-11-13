@@ -69,3 +69,16 @@ fn save_tasks_to_file(file_name: &str, tasks: &Vec<Task>) -> io::Result<()> {
     }
     Ok(())
 }
+
+
+
+// Function to list tasks and display their status
+fn list_tasks(tasks: &Vec<Task>) {
+    for (index, task) in tasks.iter().enumerate() {
+        let status = match &task.status {
+            TaskStatus::Completed => "Completed",
+            TaskStatus::Pending => "Pending",
+        };
+        println!("{}. {} - {}", index + 1, task.name, status);
+    }
+}
