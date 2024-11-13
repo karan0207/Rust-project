@@ -101,3 +101,15 @@ fn main() {
 
     // Wait for tasks to be loaded from the file (simulated delay)
     thread::sleep(Duration::from_secs(2));
+
+
+
+      // User input to create a new task
+      println!("Enter task name: ");
+      let mut task_name = String::new();
+      io::stdin().read_line(&mut task_name).unwrap();
+      let task_name = task_name.trim().to_string();
+  
+      // Creating a new task and adding it to the shared task list
+      let mut tasks = tasks.lock().unwrap();
+      tasks.push(Task::new(task_name));
