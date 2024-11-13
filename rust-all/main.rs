@@ -133,3 +133,13 @@ fn main() {
     if task_num > 0 && task_num <= tasks.len() {
         tasks[task_num - 1].complete();
     }
+
+     // Listing tasks after completion
+     println!("\nUpdated Task List:");
+     list_tasks(&tasks);
+ 
+     // Saving the updated tasks back to the file
+     if let Err(e) = save_tasks_to_file(file_name, &tasks) {
+         eprintln!("Error saving tasks: {}", e);
+     }
+ }
