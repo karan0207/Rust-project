@@ -15,3 +15,19 @@ struct Task {
     name: String,
     status: TaskStatus,
 }
+
+// Implementation block for Task
+impl Task {
+    // Constructor method to create a new task with Pending status
+    fn new(name: String) -> Task {
+        Task {
+            name,
+            status: TaskStatus::Pending,
+        }
+    }
+
+    // Method to complete the task by changing its status to Completed
+    fn complete(&mut self) {
+        self.status = TaskStatus::Completed;
+    }
+}
