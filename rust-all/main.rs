@@ -82,3 +82,18 @@ fn list_tasks(tasks: &Vec<Task>) {
         println!("{}. {} - {}", index + 1, task.name, status);
     }
 }
+
+
+// Main function to run the task manager
+fn main() {
+    let file_name = "tasks.txt";
+    let tasks = Arc::new(Mutex::new(Vec::<Task>::new())); // Shared state for tasks
+
+    // Reading tasks from file in a separate thread
+    let tasks_clone = Arc::clone(&tasks);
+    thread::spawn(move || {
+        let mut tasks = tasks_clone.lock().unwrap();
+        if let Ok(read_tasks) = read_tasks_from_file(file_name) {
+            tasks.extend(read_tasks);
+        }
+    });
