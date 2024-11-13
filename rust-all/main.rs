@@ -55,3 +55,17 @@ fn read_tasks_from_file(file_name: &str) -> io::Result<Vec<Task>> {
 
     Ok(tasks)
 }
+
+
+// Function to save tasks to a file
+fn save_tasks_to_file(file_name: &str, tasks: &Vec<Task>) -> io::Result<()> {
+    let file = OpenOptions::new().create(true).write(true).truncate(true).open(file_name)?;
+    for task in tasks {
+        let status = match task.status {
+            TaskStatus::Completed => "Completed",
+            TaskStatus::Pending => "Pending",
+        };
+        writeln!(file, "{},{}", task.name, status)?;
+    }
+    Ok(())
+}
