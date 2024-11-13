@@ -97,3 +97,7 @@ fn main() {
             tasks.extend(read_tasks);
         }
     });
+
+
+    // Wait for tasks to be loaded from the file (simulated delay)
+    thread::sleep(Duration::from_secs(2));
