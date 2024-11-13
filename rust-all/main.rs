@@ -122,3 +122,14 @@ fn main() {
     if let Err(e) = save_tasks_to_file(file_name, &tasks) {
         eprintln!("Error saving tasks: {}", e);
     }
+
+
+    // Completing a task
+    println!("\nEnter the number of the task to mark as completed: ");
+    let mut task_num = String::new();
+    io::stdin().read_line(&mut task_num).unwrap();
+    let task_num: usize = task_num.trim().parse().unwrap_or(0);
+
+    if task_num > 0 && task_num <= tasks.len() {
+        tasks[task_num - 1].complete();
+    }
