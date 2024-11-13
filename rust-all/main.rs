@@ -113,3 +113,7 @@ fn main() {
       // Creating a new task and adding it to the shared task list
       let mut tasks = tasks.lock().unwrap();
       tasks.push(Task::new(task_name));
+
+      // Listing the tasks
+    println!("\nTask List:");
+    list_tasks(&tasks);
