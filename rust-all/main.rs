@@ -31,3 +31,27 @@ impl Task {
         self.status = TaskStatus::Completed;
     }
 }
+
+
+// Function to read tasks from a file
+fn read_tasks_from_file(file_name: &str) -> io::Result<Vec<Task>> {
+    let file = File::open(file_name)?;
+    let reader = BufReader::new(file);
+    let mut tasks = Vec::new();
+
+    // Read each line from the file and create a task
+    for line in reader.lines() {
+        let line = line?;
+        let mut parts = line.split(',');
+        let name = parts.next().unwrap_or_default().to_string();
+        let status_str = parts.next().unwrap_or_default();
+        let status = match status_str {
+            "Completed" => TaskStatus::Completed,
+            _ => TaskStatus::Pending,
+        };
+
+        tasks.push(Task { name, status });
+    }
+
+    Ok(tasks)
+}
