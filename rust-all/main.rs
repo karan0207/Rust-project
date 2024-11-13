@@ -9,3 +9,9 @@ enum TaskStatus {
     Pending,
     Completed,
 }
+
+// Struct to represent a task
+struct Task {
+    name: String,
+    status: TaskStatus,
+}
