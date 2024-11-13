@@ -117,3 +117,8 @@ fn main() {
       // Listing the tasks
     println!("\nTask List:");
     list_tasks(&tasks);
+
+    // Save tasks to file
+    if let Err(e) = save_tasks_to_file(file_name, &tasks) {
+        eprintln!("Error saving tasks: {}", e);
+    }
