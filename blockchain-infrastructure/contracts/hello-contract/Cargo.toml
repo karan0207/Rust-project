@@ -1,0 +1,13 @@
+[package]
+name = "hello_contract"
+version = "0.1.0"
+edition = "2018"
+
+[dependencies]
+cosmwasm-std = "0.16"
+cosmwasm-schema = "0.16"
+cosmwasm-storage = "0.16"
+schemars = "0.8"
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+thiserror = "1.0"
