@@ -39,3 +39,10 @@ fn try_set_message(
     })?;
     Ok(Response::default())
 }
+
+
+#[entry_point]
+pub fn query(deps: Deps, _env: Env, _msg: QueryMsg) -> StdResult<String> {
+    let state = STATE.load(deps.storage)?;
+    Ok(state.message)
+}
