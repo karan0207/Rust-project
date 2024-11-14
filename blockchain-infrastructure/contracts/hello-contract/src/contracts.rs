@@ -27,3 +27,15 @@ pub fn execute(
         ExecuteMsg::SetMessage { message } => try_set_message(deps, info, message),
     }
 }
+
+fn try_set_message(
+    deps: DepsMut,
+    _info: MessageInfo,
+    message: String,
+) -> StdResult<Response> {
+    STATE.update(deps.storage, |mut state| -> StdResult<_> {
+        state.message = message.clone();
+        Ok(state)
+    })?;
+    Ok(Response::default())
+}
