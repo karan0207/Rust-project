@@ -28,4 +28,12 @@ let tokenizer = Tokenizer::from_pretrained("gpt2", None)?;
           .unsqueeze(0) // Add batch dimension
           .to(device);
 
+     // Forward pass through the model
+     let output = model.forward_ts(&[input_ids])?;
+     let logits = output.get(0).unwrap(); // Get logits from the output
+ 
+     // Decode output tokens
+     let predicted_token_id = logits.argmax(2, true).int64_value(&[0, 0]);
+     let predicted_token = tokenizer.decode(vec![predicted_token_id as u32], true)?;
+
 }
