@@ -15,4 +15,8 @@ let tokenizer = Tokenizer::from_pretrained("gpt2", None)?;
     Device::Cpu
 };
 
+/ Load a pre-trained model (e.g., GPT-2)
+    let vs = nn::VarStore::new(device);
+    let model = tch::CModule::load_on_device("gpt2.pt", device)?;
+
 }
