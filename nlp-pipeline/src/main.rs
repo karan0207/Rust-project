@@ -36,4 +36,9 @@ let tokenizer = Tokenizer::from_pretrained("gpt2", None)?;
      let predicted_token_id = logits.argmax(2, true).int64_value(&[0, 0]);
      let predicted_token = tokenizer.decode(vec![predicted_token_id as u32], true)?;
 
+     println!("Input: {}", input_text);
+     println!("Next Token: {}", predicted_token);
+ 
+     Ok(())
+
 }
