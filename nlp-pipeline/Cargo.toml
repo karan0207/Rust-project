@@ -1,0 +1,4 @@
+[dependencies]
+tch = "0.11.0" # For PyTorch bindings
+tokenizers = "0.13.3" # For handling tokenization
+serde = { version = "1.0", features = ["derive"] } # For serialization and deserialization
