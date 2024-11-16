@@ -1,0 +1,3 @@
+[dependencies]
+linfa = "0.11.1"  # Machine learning framework
+ndarray = "0.15.4"  # For numerical arrays

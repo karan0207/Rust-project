@@ -42,3 +42,6 @@ let tokenizer = Tokenizer::from_pretrained("gpt2", None)?;
      Ok(())
 
 }
+
+
+it was yet to be aple to part . so it 
