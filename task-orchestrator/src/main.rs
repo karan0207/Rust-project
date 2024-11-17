@@ -11,3 +11,8 @@ struct Task {
     command: String,
     depends_on: Option<Vec<String>>,
 }
+
+#[derive(Debug, Deserialize)]
+struct Workflow {
+    tasks: Vec<Task>,
+}
