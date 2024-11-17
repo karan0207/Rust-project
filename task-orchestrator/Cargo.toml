@@ -1,0 +1,17 @@
+[package]
+name = "task_orchestrator"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+clap = { version = "4.1", features = ["derive"] } # For CLI parsing
+serde = { version = "1.0", features = ["derive"] } # For parsing YAML/JSON
+tokio = { version = "1.32", features = ["full"] } # For async task handling
+tracing = "0.1" # For logging
+serde_yaml = "0.9" # For YAML parsing
+serde_json = "1.0" # For JSON parsing
+
+[dependencies.anyhow]
+version = "1.0" # For error handling
+features = ["backtrace"]
+
