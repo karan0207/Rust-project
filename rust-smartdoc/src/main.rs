@@ -26,3 +26,15 @@ async fn get_documentation(info: web::Json<DocumentationRequest>) -> impl Respon
 
     HttpResponse::Ok().json(response)
 }
+
+
+#[actix_web::main]
+async fn main() -> std::io::Result<()> {
+    HttpServer::new(|| {
+        App::new()
+            .route("/documentation", web::post().to(get_documentation))
+    })
+    .bind("127.0.0.1:8080")?
+    .run()
+    .await
+}
