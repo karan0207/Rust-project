@@ -1,0 +1,10 @@
+[package]
+name = "rust-smartdoc-backend"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+actix-web = "4.0"         # Web framework for the API
+serde = { version = "1.0", features = ["derive"] }  # Serialization/Deserialization
+serde_json = "1.0"        # JSON handling
+tokio = { version = "1.0", features = ["full"] }    # Async runtime
