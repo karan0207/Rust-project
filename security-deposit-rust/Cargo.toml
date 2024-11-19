@@ -1,0 +1,15 @@
+[package]
+name = "security_deposit"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+# No additional dependencies for this basic example
+# If you want to add libraries like `chrono` for date handling, you can add them here
+
+# If you want to add logging or any other libraries, they can be added under `[dependencies]`
+# Example:
+# chrono = "0.4"
+
+[dev-dependencies]
+# You can add dev dependencies like testing libraries here if needed
