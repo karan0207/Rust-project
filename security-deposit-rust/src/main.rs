@@ -30,3 +30,23 @@ fn calculate_refund(&self) -> f64 {
     self.amount - self.deductions
 }
 }
+
+
+fn main() {
+    // A HashMap to track multiple tenants and their security deposits
+    let mut deposits: HashMap<String, SecurityDeposit> = HashMap::new();
+
+    // Add a new deposit for a tenant
+    let deposit1 = SecurityDeposit::new("John Doe", 1000.0, "2024-11-01");
+    deposits.insert(deposit1.tenant_name.clone(), deposit1);
+
+    let deposit2 = SecurityDeposit::new("Jane Smith", 1200.0, "2024-11-05");
+    deposits.insert(deposit2.tenant_name.clone(), deposit2);
+
+    // Add a deduction to a tenant's deposit
+    if let Some(deposit) = deposits.get_mut("John Doe") {
+        deposit.add_deduction(200.0); // Deduction due to damages
+    }
+
+  
+}
