@@ -48,5 +48,14 @@ fn main() {
         deposit.add_deduction(200.0); // Deduction due to damages
     }
 
+      // Calculate and display refunds for each tenant
+      for (tenant, deposit) in &deposits {
+        println!(
+            "{}'s security deposit: ${}, Refund after deductions: ${}",
+            tenant,
+            deposit.amount,
+            deposit.calculate_refund()
+        );
+    }
   
 }
