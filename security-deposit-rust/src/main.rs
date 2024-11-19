@@ -20,3 +20,13 @@ impl SecurityDeposit {
             deductions: 0.0,
         }
     }
+   // Add a deduction to the deposit
+   fn add_deduction(&mut self, deduction: f64) {
+    self.deductions += deduction;
+}
+
+// Calculate the refund after deductions
+fn calculate_refund(&self) -> f64 {
+    self.amount - self.deductions
+}
+}
