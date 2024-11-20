@@ -28,3 +28,16 @@ pub mod rusty_collectibles {
         Ok(())
     }
 }
+
+
+#[derive(Accounts)]
+pub struct MintNFT<'info> {
+    #[account(init, payer = payer, mint::decimals = 0, mint::authority = payer)]
+    pub mint: Account<'info, Mint>,
+    #[account(init, payer = payer, associated_token::mint = mint, associated_token::authority = payer)]
+    pub token_account: Account<'info, TokenAccount>,
+    #[account(mut)]
+    pub payer: Signer<'info>,
+    pub system_program: Program<'info, System>,
+    pub token_program: Program<'info, Token>,
+}
