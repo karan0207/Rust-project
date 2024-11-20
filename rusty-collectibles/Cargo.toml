@@ -1,0 +1,20 @@
+[package]
+name = "rusty_collectibles"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+anchor-lang = "0.30.0" # Anchor framework for Solana
+anchor-spl = "0.30.0"  # Solana SPL token library
+
+[features]
+no-entrypoint = [] # Optional: Used for testing or custom entry points
+
+[lib]
+name = "rusty_collectibles"
+crate-type = ["cdylib", "lib"] # Required for Solana programs
+
+[profile.release]
+lto = "fat"  # Optimizes program size
+codegen-units = 1 # Recommended for Solana programs
+opt-level = "z"  # Maximum optimizations
