@@ -68,3 +68,23 @@ fn load_stock_data(filepath: &str) -> Result<Vec<StockData>, Box<dyn Error>> {
 
     Ok(data)
 }
+
+
+
+fn main() -> Result<(), Box<dyn Error>> {
+    // Load stock data
+    let filepath = "data/stock_data.csv";
+    let stock_data = load_stock_data(filepath)?;
+
+    // Extract closing prices
+    let prices: Vec<f64> = stock_data.iter().map(|d| d.Close).collect();
+
+    // Parameters for moving averages
+    let short_window = 5;
+    let long_window = 20;
+
+    // Run the strategy
+    moving_average_crossover(&prices, short_window, long_window);
+
+    Ok(())
+}
