@@ -53,3 +53,18 @@ fn moving_average_crossover(prices: &[f64], short_window: usize, long_window: us
 
     println!("Total Profit: ${:.2}", profit);
 }
+
+
+/// Load stock data from a CSV file
+fn load_stock_data(filepath: &str) -> Result<Vec<StockData>, Box<dyn Error>> {
+    let file = File::open(filepath)?;
+    let mut reader = ReaderBuilder::new().has_headers(true).from_reader(file);
+
+    let mut data = Vec::new();
+    for result in reader.deserialize() {
+        let record: StockData = result?;
+        data.push(record);
+    }
+
+    Ok(data)
+}
