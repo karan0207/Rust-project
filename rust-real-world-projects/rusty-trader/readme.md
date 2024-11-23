@@ -1,4 +1,4 @@
-Project Title: RustyTrader - A Stock Trading Algorithm
+## Project Title: RustyTrader - A Stock Trading Algorithm
 Overview
 RustyTrader is a command-line application designed to analyze stock data and execute simulated trading strategies. Using Rust's performance and reliability, the application fetches historical stock prices, applies trading algorithms (like moving averages or momentum strategies), and reports profits or losses.
 

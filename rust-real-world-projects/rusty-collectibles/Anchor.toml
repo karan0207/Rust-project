@@ -1,0 +1,15 @@
+[programs.localnet]
+rusty_collectibles = "Your Program ID Here"
+
+[registry]
+url = "https://anchor.projectserum.com"
+
+[scripts]
+test = "anchor test"
+
+[provider]
+cluster = "localnet"
+wallet = "~/.config/solana/id.json"
+
+[program]
+lib_name = "rusty_collectibles"
