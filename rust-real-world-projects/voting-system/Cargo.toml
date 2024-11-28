@@ -1,0 +1,20 @@
+[package]
+name = "voting_contract"
+version = "0.1.0"
+authors = ["Your Name <your.email@example.com>"]
+edition = "2021"
+description = "A smart contract for managing proposals and votes on the NEAR Protocol."
+license = "MIT"
+
+[lib]
+crate-type = ["cdylib", "rlib"]
+
+[dependencies]
+# NEAR SDK for smart contract development
+near-sdk = "4.0.0"
+
+# Borsh serialization/deserialization for contract state
+borsh = "0.10.3"
+
+[profile.release]
+opt-level = "z"
